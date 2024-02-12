@@ -5,20 +5,11 @@ use rss::{
 };
 use serde::{Deserialize, Serialize};
 
-fn null_to_default<'de, D, T>(d: D) -> Result<T, D::Error>
-where
-    D: Deserializer<'de>,
-    T: Default + Deserialize<'de>,
-{
-    let opt = Option::deserialize(d)?;
-    let val = opt.unwrap_or_else(T::default);
-    Ok(val)
-}
-
 const MANGACROSS_HOST: &str = "https://mangacross.jp";
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct MangaCrossComic {
+    #[serde(default)]
     pub comic: Comic,
 }
 
@@ -63,7 +54,6 @@ impl MangaCrossComic {
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Comic {
-    #[serde(deserialize_with = "null_to_default")]
     pub dir_name: String,
     pub title: String,
     pub title_kana: String,
