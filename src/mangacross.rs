@@ -133,7 +133,7 @@ pub struct Episode {
     pub is_unlimited_comic: bool,
 }
 
-impl Episode {
+impl Promotion + Episode {
     pub async fn to_item(&self, comic: &Comic) -> eyre::Result<Item> {
         info!("to_item {} start", self.sort_volume);
         let mut item = ItemBuilder::default();
