@@ -9,7 +9,7 @@ use crate::mangacross::MangaCrossComic;
 
 mod mangacross;
 
-const TARGETS: [&str; 3] = ["ninepeaks", "yabai", "shiomai"];
+counted_array!(const TARGETS: [&str; _] = ["ninepeaks", "yabai", "shiomai"]);
 
 #[tokio::main]
 async fn main() -> eyre::Result<()> {
