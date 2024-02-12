@@ -85,8 +85,8 @@ pub struct Comic {
     pub tw_hashtag: String,
     pub tw_screen_name: String,
     pub next_publish_at: Option<String>,
-    pub next_date_customize_text: Option<String>,
-    // pub promotion: Option<Promotion>,
+    //pub next_date_customize_text: Option<String>,
+    pub promotion: Option<Promotion>,
     pub is_unlimited_comic: bool,
     // pub unlimited_event_singles: Vec<?>,
     pub episodes: Vec<Episode>,
@@ -107,10 +107,10 @@ pub struct ComicTag {
 }
 
 //#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-//pub struct Promotion {
-//    pub title: String,
-//    pub content: String,
-//}
+pub struct Promotion {
+    pub title: String,
+    pub content: String,
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Episode {
