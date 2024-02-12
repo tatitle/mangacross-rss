@@ -5,11 +5,6 @@ use tokio::io::AsyncWriteExt;
 use log::info;
 use tokio::time::Instant;
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
-pub struct MangaCrossComic {
-    next_date_customize_text: Option<String>,
-}
-
 use crate::mangacross::MangaCrossComic;
 
 mod mangacross;
