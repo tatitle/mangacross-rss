@@ -5,7 +5,10 @@ use tokio::io::AsyncWriteExt;
 use log::info;
 use tokio::time::Instant;
 
-use serde::Deserialize;
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct MangaCrossComic {
+    next_date_customize_text: Option<String>,
+}
 
 use crate::mangacross::MangaCrossComic;
 
