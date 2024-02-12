@@ -13,7 +13,7 @@ jobs:
       - name: mangacross-rss build
         run: |
           version=2.0.0
-          wget "https://github.com/naari3/mangacross-rss/releases/download/v${version}/mangacross-rss_v${version}_x86_64-unknown-linux-musl.zip"
+          wget "https://github.com/tatitle/mangacross-rss/releases/download/v${version}/mangacross-rss_v${version}_x86_64-unknown-linux-musl.zip"
           unzip "mangacross-rss_v${version}_x86_64-unknown-linux-musl.zip"
           ./mangacross-rss
       - name: Deploy to GitHub Pages
