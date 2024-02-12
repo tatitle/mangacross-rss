@@ -5,6 +5,8 @@ use tokio::io::AsyncWriteExt;
 use log::info;
 use tokio::time::Instant;
 
+use serde::Deserialize;
+
 use crate::mangacross::MangaCrossComic;
 
 mod mangacross;
