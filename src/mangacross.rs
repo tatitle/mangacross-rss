@@ -9,18 +9,7 @@ const MANGACROSS_HOST: &str = "https://mangacross.jp";
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct MangaCrossComic {
-    #[serde(deserialize_with = "deserialize_null_default")]
-    value: String, 
     pub comic: Comic,
-}
-
-fn deserialize_null_default<'de, D, T>(deserializer: D) -> Result<T, D::Error>
-where
-    T: Default + Deserialize<'de>,
-    D: Deserializer<'de>,
-{
-    let opt = Option::deserialize(deserializer)?;
-    Ok(opt.unwrap_or_default())
 }
 
 impl MangaCrossComic {
