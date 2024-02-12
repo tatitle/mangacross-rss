@@ -25,7 +25,7 @@ async fn main() -> eyre::Result<()> {
         let body = res.text().await?;
         info!("Get {target} json");
 
-        let comic: MangaCrossComic = serde_json::from_str(body.as_str().replace("null", "\"null\""))?;
+        let comic: MangaCrossComic = serde_json::from_str(body.as_str().replace(null, "\"null\""))?;
 
         info!("Create feed start");
         let channel = comic.to_channel().await?;
