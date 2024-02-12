@@ -108,8 +108,8 @@ pub struct ComicTag {
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Promotion {
-    pub title: String,
-    pub content: String,
+    pub title: Option<String>,
+    pub content: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
