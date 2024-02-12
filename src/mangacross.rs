@@ -4,9 +4,11 @@ use rss::{
     Channel, ChannelBuilder, EnclosureBuilder, GuidBuilder, ImageBuilder, Item, ItemBuilder,
 };
 use serde::{Deserialize, Serialize};
+use serde_with::skip_serializing_none;
 
 const MANGACROSS_HOST: &str = "https://mangacross.jp";
 
+#[skip_serializing_none]
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct MangaCrossComic {
     pub comic: Comic,
@@ -187,7 +189,6 @@ pub struct PurchaseUrl {
     pub rakuten: String,
 }
 
-#[skip_serializing_none]
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct RelatedComic {
     pub dir_name: String,
