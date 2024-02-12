@@ -58,7 +58,7 @@ pub struct Comic {
     pub title_kana: String,
     pub author: String,
     pub author_kana: String,
-    pub comic_category: ComicCategory,
+    pub comic_category: Option<ComicCategory>,
     pub comic_tags: Vec<ComicTag>,
     pub image_url: String,
     pub image_double_url: String,
@@ -86,7 +86,7 @@ pub struct Comic {
     pub tw_screen_name: String,
     pub next_publish_at: Option<String>,
     pub next_date_customize_text: Option<String>,
-    pub promotion: Promotion,
+    pub promotion: Option<Promotion>,
     pub is_unlimited_comic: bool,
     // pub unlimited_event_singles: Vec<?>,
     pub episodes: Vec<Episode>,
@@ -108,8 +108,8 @@ pub struct ComicTag {
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Promotion {
-    pub title: Option<String>,
-    pub content: Option<String>,
+    pub title: String,
+    pub content: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
