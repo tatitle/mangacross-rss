@@ -51,6 +51,7 @@ impl MangaCrossComic {
     }
 }
 
+#[skip_serializing_none]
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Comic {
     pub dir_name: String,
