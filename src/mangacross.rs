@@ -86,7 +86,7 @@ pub struct Comic {
     pub tw_screen_name: String,
     pub next_publish_at: Option<String>,
     pub next_date_customize_text: Option<String>,
-    pub promotion: Option<String>,
+    pub promotion: Promotion,
     pub is_unlimited_comic: bool,
     // pub unlimited_event_singles: Vec<?>,
     pub episodes: Vec<Episode>,
