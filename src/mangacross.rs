@@ -9,6 +9,7 @@ const MANGACROSS_HOST: &str = "https://mangacross.jp";
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct MangaCrossComic {
+    next_date_customize_text: Option<String>,
     pub comic: Comic,
 }
 
