@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          node-version: "20"
       - name: mangacross-rss build
         run: |
           version=0.0.3
